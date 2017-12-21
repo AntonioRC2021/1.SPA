@@ -1,3 +1,24 @@
-<p>
-  heroes works!
-</p>
+<h1>Guerreros <small>Universo 7</small></h1>
+<hr>
+
+
+<div class="card-columns">
+
+  <div class="card animated fadeIn fast" *ngFor="let guerrero of guerreros; let i = index">
+      <img class="card-img-top img-fluid" [src]="guerrero.img" [alt]="guerrero.nombre">
+      <div class="card-body">
+        <h4 class="card-title">{{ guerrero.nombre }}</h4>
+        <p class="card-text">{{ guerrero.bio }}</p>
+        <p class="card-text"><small class="text-muted">{{ guerrero.aparicion }}</small></p>
+
+        <button (click)="verGuerrero(i)"
+         type="button" class="btn btn-outline-primary btn-block">
+          Ver mas..
+        </button>
+        <!--<a [routerLink]="['/guerrero', i]" class="btn btn-outline-primary">Ver mas link...</a>-->
+
+      </div>
+  </div>
+
+
+</div>
