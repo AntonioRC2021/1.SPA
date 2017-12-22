@@ -1,1 +1,26 @@
-<h1><small></small></h1>
+<h1 animated fadeIn>{{ guerrero.nombre }} <small>{{ guerrero.aparicion }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+
+  <div class="col-md-4">
+
+    <img [src]="guerrero.img" class="img-fluid" [alt]="guerrero.nombre">
+    <br><br>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{  guerrero.nombre }}</h3>
+    <hr>
+    <p>
+      {{ guerrero.bio }}
+    </p>
+    <div>
+      <img *ngIf="guerrero.afiliacion=='Heroe'" class="img-logo" src="assets/img/A-64.png" alt="Heroe">
+      <img *ngIf="guerrero.afiliacion=='Villano'" class="img-logo" src="assets/img/B-64.png" alt="Villano">
+    </div>
+
+  </div>
+</div>
