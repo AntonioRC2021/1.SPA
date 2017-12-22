@@ -89,6 +89,24 @@ export class GuerrerosService {
     return this.guerreros[idx];
   }
 
+  buscarGuerrero( termino:string ){
+    let guerrerosArr:Guerrero[] = [];
+    termino = termino.toLowerCase();
+
+    for( let guerrero of this.guerreros ){
+
+      let nombre = guerrero.nombre.toLowerCase();
+
+      if( nombre.indexOf( termino ) >= 0 ){
+        guerrerosArr.push( guerrero )
+      }
+
+    }
+
+    return guerrerosArr;
+
+  }
+
 
 }
 
